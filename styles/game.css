@@ -1,0 +1,111 @@
+:where(#menu) {
+  width: 100%;
+}
+
+#menu.hidden-box {
+  overflow: hidden;
+}
+
+#menu h2 {
+  font-size: 1.5rem;
+}
+
+.menu-options {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.menu-options > .btn {
+  flex: 1;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+#start-game {
+  background-color: var(--c-orange);
+
+  font-weight: bold;
+  color: var(--c-white);
+
+  border: none;
+
+  transition: all 0.2s ease-in-out;
+
+  max-width: 20rem;
+}
+
+#start-game:hover,
+#start-game:active {
+  background-color: var(--c-orange-d);
+  transform: scale(1.1);
+}
+
+#new-word {
+  border: 0.25rem solid var(--c-orange);
+  display: none;
+}
+
+/* GAME SECTION */
+
+#game {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+#word-panel {
+  display: none;
+  height: 0;
+}
+
+#word-panel.shown-box {
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+
+  overflow: visible;
+}
+
+#letters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+}
+
+#attempts-input {
+  border: 0.125rem solid var(--c-gray-d);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+}
+
+.letter-item {
+  padding: 0.5rem 1rem;
+
+  text-align: center;
+  font-size: 1.5rem;
+
+  border-bottom: 0.2rem solid var(--c-orange);
+
+  transition: all 0.3s ease-in;
+}
+
+.letter-item.filled {
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--c-gray-d);
+}
+
+.blank-item {
+  border: none;
+  box-shadow: none;
+}

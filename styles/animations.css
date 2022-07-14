@@ -1,0 +1,29 @@
+@keyframes squash {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0; 
+    display: none;
+  }
+}
+
+@keyframes reverse-squash {
+  from {
+    height: 0;
+    display: none;
+  }
+  to {
+    height: 100%;
+    display: block;
+  }
+}
+
+.hidden-box {
+  animation: squash .7s forwards;
+  overflow: hidden;
+}
+
+.shown-box {
+  animation: reverse-squash .7s forwards;
+}
