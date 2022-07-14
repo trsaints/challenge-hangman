@@ -289,6 +289,8 @@ function catchIgnorableKeys(evt) {
 }
 
 function startGame() {
+  fails = 0;
+  console.log(fails);
   hideElement(gameMenu);
   currGame = generateGameWord();
 
@@ -379,7 +381,6 @@ A palavra correta era: ${currGame.word}!
 }
 
 function stopGame() {
-  fails = 0;
   document.removeEventListener("keydown", getKeys);
   removeUI();
 }
