@@ -303,7 +303,6 @@ function addFailCount() {
     setTimeout(() => {
       displayDefeat();
       stopGame();
-      fails = 0;
     }, 500);
 
     return;
@@ -380,6 +379,7 @@ A palavra correta era: ${currGame.word}!
 }
 
 function stopGame() {
+  fails = 0;
   document.removeEventListener("keydown", getKeys);
   removeUI();
 }
