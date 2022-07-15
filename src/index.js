@@ -83,12 +83,47 @@ let ignorableKeys = [
   92, 93, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 225,
 ];
 
+let virtualKeys = [
+  "Q",
+  "W",
+  "E",
+  "R",
+  "T",
+  "Y",
+  "U",
+  "I",
+  "O",
+  "P",
+  "A",
+  "S",
+  "D",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "Ç",
+  "Z",
+  "X",
+  "C",
+  "V",
+  "B",
+  "N",
+  "M",
+];
+
 const startBtn = document.querySelector("#start-game");
 const gameMenu = document.querySelector("#menu");
 const menuTitle = document.querySelector("#menu-title");
 
 let currGame = {};
 let fails = 0;
+
+function getValue(input) {
+  return input.value;
+}
 
 function getRandomIndex(item) {
   return Math.floor(Math.random() * item.length);
@@ -120,9 +155,31 @@ function clearContent(element) {
 }
 
 function testKey(evt) {
-  const lettersOnly = /^[a-z]/g;
+  const lettersOnly = /^[a-z]|['ç']/g;
 
   return lettersOnly.test(evt);
+}
+
+function getVirtualKeys(evt) {
+  const failsInput = document.querySelector("#attempts-input");
+  const lettersPanel = document.querySelector("#letters-panel");
+  const panels = lettersPanel.childNodes;
+  const virtualKeyboard = document.querySelector(".virtual-keyboard");
+
+  if (evt.target.parentNode === virtualKeyboard) {
+    if (checkVirtualKey(evt.target, currGame.word)) {
+      fillInput(getValue(evt.target), failsInput);
+      addFailCount();
+      drawGallow(fails);
+    } else {
+      fillPanel(currGame.word, getValue(evt.target), panels);
+      checkPanel(evt.target, panels)
+    }
+  }
+}
+
+function checkVirtualKey(evt, word) {
+  return !compareKey(word, getValue(evt));
 }
 
 function compareKey(word, key) {
@@ -169,6 +226,28 @@ function generateInput() {
   return attemptsInput;
 }
 
+function generateKeyboard() {
+  const virtualKeyboard = document.createElement("div");
+  virtualKeyboard.classList.add("virtual-keyboard");
+
+  for (let key of virtualKeys) {
+    let btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.classList.add("virtual-key");
+    btn.value = key.toLowerCase();
+    btn.textContent = key;
+
+    virtualKeyboard.appendChild(btn);
+
+    if (key === "P" || key === "Ç") {
+      let br = document.createElement("br");
+      virtualKeyboard.appendChild(br);
+    }
+  }
+
+  return virtualKeyboard;
+}
+
 function generateUI(word) {
   const wordPanel = document.querySelector("#word-panel");
   const canvas = generateCanvas();
@@ -176,6 +255,7 @@ function generateUI(word) {
   addElement(canvas, wordPanel);
   addElement(generateInput(), wordPanel);
   addElement(generatePanel(word), wordPanel);
+  addElement(generateKeyboard(), wordPanel);
 
   showElement(wordPanel);
 }
@@ -197,11 +277,11 @@ function getKeys(evt) {
   }
 
   if (catchWrongKey(evt, currGame.word)) {
-    fillInput(evt, failsInput);
+    fillInput(evt.key, failsInput);
     addFailCount();
     drawGallow(fails);
   } else {
-    fillPanel(currGame.word, evt, panels);
+    fillPanel(currGame.word, evt.key, panels);
     checkPanel(evt, panels);
   }
 }
@@ -257,18 +337,18 @@ function drawLine(x, angle, y, length, color, ctx) {
 
 function fillPanel(word, evt, panels) {
   for (let i = 0; i < word.length; i++) {
-    if (word[i] === evt.key) {
-      panels[i].textContent = evt.key;
+    if (word[i] === evt) {
+      panels[i].textContent = evt;
       expandPanel(panels[i]);
     }
   }
 }
 
-function fillInput(evt, input) {
-  if (compareKey(input.value, evt.key)) {
+function fillInput(ref, input) {
+  if (compareKey(input.value, ref)) {
     return;
   } else {
-    input.value += `${evt.key} `;
+    input.value += `${ref} `;
   }
 }
 
@@ -296,6 +376,7 @@ function startGame() {
 
   generateUI(currGame);
   document.addEventListener("keydown", getKeys);
+  document.addEventListener("click", getVirtualKeys);
 }
 
 function addFailCount() {
@@ -312,7 +393,7 @@ function addFailCount() {
 }
 
 function checkPanel(evt, panels) {
-  if (testKey(evt.key)) {
+  if (testKey(evt.key) || getValue(evt)) {
     for (let i = 0; i < currGame.word.length; i++) {
       if (panels[i].textContent !== "") {
         continue;
@@ -382,6 +463,8 @@ A palavra correta era: ${currGame.word}!
 
 function stopGame() {
   document.removeEventListener("keydown", getKeys);
+  document.removeEventListener("click", getVirtualKeys);
+  
   removeUI();
 }
 
