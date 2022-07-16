@@ -110,6 +110,7 @@
 }
 
 .virtual-key {
+  min-width: 2rem;
   margin: .125rem;
   padding: .5rem;
   background-color: var(--c-black);

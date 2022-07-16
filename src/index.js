@@ -92,6 +92,13 @@ function generateCanvas() {
   return canvas;
 }
 
+function generateCategory(game) {
+  const categoryTag = document.createElement('h2');
+  categoryTag.classList.add("category-tag");
+  categoryTag.textContent  = `A dica é: ${game.category}`;
+  return categoryTag;
+}
+
 function generatePanel(game) {
   const gamePanel = document.createElement("ul");
   gamePanel.setAttribute("id", "letters-panel");
@@ -143,9 +150,9 @@ function generateKeyboard() {
 
 function generateUI(word) {
   const wordPanel = document.querySelector("#word-panel");
-  const canvas = generateCanvas();
 
-  addElement(canvas, wordPanel);
+  addElement(generateCategory(word), wordPanel);
+  addElement(generateCanvas(), wordPanel);
   addElement(generateInput(), wordPanel);
   addElement(generatePanel(word), wordPanel);
   addElement(generateKeyboard(), wordPanel);
