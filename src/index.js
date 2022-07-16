@@ -395,6 +395,10 @@ function addFailCount() {
 function checkPanel(evt, panels) {
   if (testKey(evt.key) || getValue(evt)) {
     for (let i = 0; i < currGame.word.length; i++) {
+      if (panels[i].classList.contains("blank-item")) {
+        continue;
+      }
+
       if (panels[i].textContent !== "") {
         continue;
       } else {
