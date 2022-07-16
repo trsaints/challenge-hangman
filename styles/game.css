@@ -109,9 +109,6 @@
   box-shadow: none;
 }
 
-.virtual-keyboard {
-}
-
 .virtual-key {
   margin: .125rem;
   padding: .5rem;
@@ -119,11 +116,12 @@
   border: none;
   border-radius: .25rem;
   color: var(--c-orange);
+  font-size: 1.25rem;
   font-weight: bold;
-  transition: all .3s;
+  transition: all .3s ease-in-out;
 }
 
-.virtual-key:hover, .virtual-key:active {
-  transform: scale(1.1);
+.virtual-key:hover, .virtual-key:active, .virtual-key:focus {
+  transform: scale(1.15 );
   background-color: var(--c-black-l);
 }
