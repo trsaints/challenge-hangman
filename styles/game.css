@@ -91,6 +91,7 @@
 
 .letter-item {
   padding: 0.5rem 1rem;
+  min-height: 3.125rem;
 
   text-align: center;
   font-size: 1.5rem;
@@ -109,20 +110,33 @@
   box-shadow: none;
 }
 
+.virtual-keyboard {
+  text-align: center;
+}
+
 .virtual-key {
-  min-width: 2rem;
+  min-width: 1.875rem;
   margin: .125rem;
-  padding: .5rem;
+  padding: .5rem .35rem;
   background-color: var(--c-black);
+
   border: none;
   border-radius: .25rem;
+
   color: var(--c-orange);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
+
   transition: all .3s ease-in-out;
 }
 
+.blank-line {
+  display: block;
+  width: 100%;
+  height: .25rem;
+}
+
 .virtual-key:hover, .virtual-key:active, .virtual-key:focus {
-  transform: scale(1.15 );
+  transform: scale(1.07 );
   background-color: var(--c-black-l);
 }
