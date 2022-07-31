@@ -136,8 +136,9 @@ function generateKeyboard() {
     virtualKeyboard.appendChild(btn);
 
     if (key === "P" || key === "Ç") {
-      let br = document.createElement("br");
-      virtualKeyboard.appendChild(br);
+      let line = document.createElement("span");
+      line.classList.add("blank-line");
+      virtualKeyboard.appendChild(line);
     }
   }
 
