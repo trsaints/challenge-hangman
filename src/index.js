@@ -1,11 +1,7 @@
 import { GameWord } from "./GameWord.js";
 import { wordsList } from "./wordsList.js"
 import { virtualKeys } from "./virtualKeys.js"
-
-let ignorableKeys = [
-  8, 9, 13, 16, 17, 18, 20, 27, 32, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 91,
-  92, 93, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 225,
-];
+import { ignorableKeys } from "./ignorableKeys.js";
 
 const startBtn = document.querySelector("#start-game");
 const gameMenu = document.querySelector("#menu");
