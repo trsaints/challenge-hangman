@@ -8,33 +8,119 @@
       content="Um jogo de adivinhação de palavras. Você será capaz de vencer?"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./public/icons/css/fontawesome.css" />
+    <link rel="stylesheet" href="./public/icons/css/solid.css" />
     <title>Jogo da Forca</title>
   </head>
-  <body>
-    <main>
-      <h1 class="main-banner">Jogo da Forca</h1>
-      <section id="menu">
-        <h2 id="menu-title">Eaí, o que deseja fazer?</h2>
-        <div class="menu-options">
-          <button type="button" class="btn" id="start-game" role="button">
-            Novo Jogo
+  <body data-context="default">
+    <main class="main" >
+      <h1 class="main__title">Jogo da Forca</h1>
+
+      <section class="main__menu" data-element="menu">
+        <h2 class="menu__title" data-element="menu-title">Eaí, o que deseja fazer?</h2>
+
+        <menu class="menu__options">
+          <button class="options__button" type="button" data-element="start-game">
+            Iniciar Jogo
+            <i class="fa-solid fa-play" aria-hidden="true"></i>
           </button>
-        </div>
+
+          <button class="options__button" type="button" data-element="edit-game">
+            Configurar Jogo
+            <i class="fa-solid fa-pen" aria-hidden="true"></i>
+          </button>
+        </menu>
       </section>
 
-      <section id="game">
-        <div id="word-panel"></div>
+      <div class="main__game hidden" aria-hidden="true" data-element="game"></div>
+
+      <section class="main__editor hidden" aria-hidden="true">
+        <h2 class="editor__title">Editor de Palavras</h2>
+
+        <menu class="editor__options">
+          <button class="options__button" type="button" data-element="add-word">
+            Nova Palavra
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+
+          <button class="options__button" type="button" data-element="list-words">
+            Listar Palavras
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+          </button>
+        </menu>
+
+        <form class="editor__form" action="./success.html">
+          <fieldset class="form__fieldset">
+            <legend class="fieldset__legend">Nova Palavra</legend>
+
+            <div class="fieldset__field">
+              <label class="field__input" for="game-word">Palavra</label>
+              <input class="field__label" id="game-word" type="text" />
+            </div>
+
+            <div class="fieldset__field">
+              <label class="field__input" for="game-category">Categoria</label>
+              <input class="field__label" id="game-category" type="text" />
+            </div>
+          </fieldset>
+
+          <button class="form__submit" type="submit">
+            Adicionar Palavra
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <section class="editor__listing">
+          <h3 class="listing__title">Palavras do Jogo</h3>
+
+          <ul class="listing__list" data-editor="listing"></ul>
+
+          <dialog
+            class="listing__dialog hidden"
+            data-editor="modal"
+            aria-hidden="true"
+          >
+            <h3 class="dialog__title">Excluir palavra</h3>
+
+            <p class="dialog__display"></p>
+
+            <menu class="dialog__options">
+              <button
+                class="options__button"
+                type="button"
+                data-element="delete"
+              >
+                Excluir
+                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+              </button>
+
+              <button
+                class="options__button"
+                type="button"
+                data-element="cancel"
+              >
+                Cancelar
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+              </button>
+            </menu>
+          </dialog>
+        </section>
       </section>
     </main>
 
-    <footer>
-      <section>
-        <h6>Jogo da Forca ONE ─ Challenge Alura 2022</h6>
-        <p>
-          Feito por
-          <a href="https://github.com/trsaints/challenge-gallow">@trsaints</a>
-        </p>
-      </section>
+    <footer class="footer">
+      <h3 class="footer__title">Jogo da Forca ONE ─ Challenge Alura 2022</h3>
+
+      <p class="footer__desc">
+        Feito por
+        <a
+          class="desc__link"
+          href="https://github.com/trsaints/challenge-gallow"
+          rel="noopener"
+          target="_blank"
+          >@trsaints</a
+        >
+      </p>
     </footer>
 
     <script src="./src/index.js" type="module"></script>
