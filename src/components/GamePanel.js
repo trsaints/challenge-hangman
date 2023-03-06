@@ -62,6 +62,7 @@ export default class GamePanel {
     const virtualKey = new DOMElement("button", ["keyboard__key"]);
     virtualKey.textContent = key;
     virtualKey.setAttribute("value", key);
+    virtualKey.setAttribute("data-element", "key");
 
     return virtualKey;
   }
