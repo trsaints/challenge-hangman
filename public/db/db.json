@@ -2,279 +2,279 @@
   "game": {
     "words": [
       {
-        "name": "batata",
-        "category": "legume"
+        "name": "BATATA",
+        "category": "LEGUME"
       },
       {
-        "name": "maçã",
-        "category": "fruta"
+        "name": "MAÇÃ",
+        "category": "FRUTA"
       },
       {
-        "name": "banana",
-        "category": "fruta"
+        "name": "BANANA",
+        "category": "FRUTA"
       },
       {
-        "name": "melão",
-        "category": "fruta"
+        "name": "MELÃO",
+        "category": "FRUTA"
       },
       {
-        "name": "melancia",
-        "category": "fruta"
+        "name": "MELANCIA",
+        "category": "FRUTA"
       },
       {
-        "name": "jaca",
-        "category": "fruta"
+        "name": "JACA",
+        "category": "FRUTA"
       },
       {
-        "name": "laranja",
-        "category": "fruta"
+        "name": "LARANJA",
+        "category": "FRUTA"
       },
       {
-        "name": "uva",
-        "category": "fruta"
+        "name": "UVA",
+        "category": "FRUTA"
       },
       {
-        "name": "amora",
-        "category": "fruta"
+        "name": "AMORA",
+        "category": "FRUTA"
       },
       {
-        "name": "cereja",
-        "category": "fruta"
+        "name": "CEREJA",
+        "category": "FRUTA"
       },
       {
-        "name": "pêssego",
-        "category": "fruta"
+        "name": "PÊSSEGO",
+        "category": "FRUTA"
       },
       {
-        "name": "cenoura",
-        "category": "legume"
+        "name": "CENOURA",
+        "category": "LEGUME"
       },
       {
-        "name": "beterraba",
-        "category": "legume"
+        "name": "BETERRABA",
+        "category": "LEGUME"
       },
       {
-        "name": "cará",
-        "category": "legume"
+        "name": "CARÁ",
+        "category": "LEGUME"
       },
       {
-        "name": "rabanete",
-        "category": "legume"
+        "name": "RABANETE",
+        "category": "LEGUME"
       },
       {
-        "name": "mandioca",
-        "category": "legume"
+        "name": "MANDIOCA",
+        "category": "LEGUME"
       },
       {
-        "name": "abóbora",
-        "category": "legume"
+        "name": "ABÓBORA",
+        "category": "LEGUME"
       },
       {
-        "name": "pepino",
-        "category": "legume"
+        "name": "PEPINO",
+        "category": "LEGUME"
       },
       {
-        "name": "tomate",
-        "category": "fruta"
+        "name": "TOMATE",
+        "category": "FRUTA"
       },
       {
-        "name": "brócolis",
-        "category": "legume"
+        "name": "BRÓCOLIS",
+        "category": "LEGUME"
       },
       {
-        "name": "gavião",
-        "category": "ave"
+        "name": "GAVIÃO",
+        "category": "AVE"
       },
       {
-        "name": "arara",
-        "category": "ave"
+        "name": "ARARA",
+        "category": "AVE"
       },
       {
-        "name": "coruja",
-        "category": "ave"
+        "name": "CORUJA",
+        "category": "AVE"
       },
       {
-        "name": "harpia",
-        "category": "ave"
+        "name": "HARPIA",
+        "category": "AVE"
       },
       {
-        "name": "carcará",
-        "category": "ave"
+        "name": "CARCARÁ",
+        "category": "AVE"
       },
       {
-        "name": "urubú",
-        "category": "ave"
+        "name": "URUBÚ",
+        "category": "AVE"
       },
       {
-        "name": "falcão",
-        "category": "ave"
+        "name": "FALCÃO",
+        "category": "AVE"
       },
       {
-        "name": "guepardo",
-        "category": "felino"
+        "name": "GUEPARDO",
+        "category": "FELINO"
       },
       {
-        "name": "leão",
-        "category": "felino"
+        "name": "LEÃO",
+        "category": "FELINO"
       },
       {
-        "name": "leopardo",
-        "category": "felino"
+        "name": "LEOPARDO",
+        "category": "FELINO"
       },
       {
-        "name": "pantera",
-        "category": "felino"
+        "name": "PANTERA",
+        "category": "FELINO"
       },
       {
-        "name": "onça",
-        "category": "felino"
+        "name": "ONÇA",
+        "category": "FELINO"
       },
       {
-        "name": "lince",
-        "category": "felino"
+        "name": "LINCE",
+        "category": "FELINO"
       },
       {
-        "name": "brasil",
-        "category": "país"
+        "name": "BRASIL",
+        "category": "PAÍS"
       },
       {
-        "name": "costa do marfim",
-        "category": "país"
+        "name": "COSTA DO MARFIM",
+        "category": "PAÍS"
       },
       {
-        "name": "senegal",
-        "category": "país"
+        "name": "SENEGAL",
+        "category": "PAÍS"
       },
       {
-        "name": "camarões",
-        "category": "país"
+        "name": "CAMARÕES",
+        "category": "PAÍS"
       },
       {
-        "name": "canadá",
-        "category": "país"
+        "name": "CANADÁ",
+        "category": "PAÍS"
       },
       {
-        "name": "japão",
-        "category": "país"
+        "name": "JAPÃO",
+        "category": "PAÍS"
       },
       {
-        "name": "china",
-        "category": "país"
+        "name": "CHINA",
+        "category": "PAÍS"
       },
       {
-        "name": "estados unidos",
-        "category": "país"
+        "name": "ESTADOS UNIDOS",
+        "category": "PAÍS"
       },
       {
-        "name": "méxico",
-        "category": "país"
+        "name": "MÉXICO",
+        "category": "PAÍS"
       },
       {
-        "name": "argentina",
-        "category": "país"
+        "name": "ARGENTINA",
+        "category": "PAÍS"
       },
       {
-        "name": "portugal",
-        "category": "país"
+        "name": "PORTUGAL",
+        "category": "PAÍS"
       },
       {
-        "name": "espanha",
-        "category": "país"
+        "name": "ESPANHA",
+        "category": "PAÍS"
       },
       {
-        "name": "rússia",
-        "category": "país"
+        "name": "RÚSSIA",
+        "category": "PAÍS"
       },
       {
-        "name": "índia",
-        "category": "país"
+        "name": "ÍNDIA",
+        "category": "PAÍS"
       },
       {
-        "name": "israel",
-        "category": "país"
+        "name": "ISRAEL",
+        "category": "PAÍS"
       }
     ],
     "accteptableKeys": [
       {
-        "key": "q"
+        "key": "Q"
       },
       {
-        "key": "w"
+        "key": "W"
       },
       {
-        "key": "e"
+        "key": "E"
       },
       {
-        "key": "r"
+        "key": "R"
       },
       {
-        "key": "t"
+        "key": "T"
       },
       {
-        "key": "y"
+        "key": "Y"
       },
       {
-        "key": "u"
+        "key": "U"
       },
       {
-        "key": "i"
+        "key": "I"
       },
       {
-        "key": "o"
+        "key": "O"
       },
       {
-        "key": "p"
+        "key": "P"
       },
       {
-        "key": "a"
+        "key": "A"
       },
       {
-        "key": "s"
+        "key": "S"
       },
       {
-        "key": "d"
+        "key": "D"
       },
       {
-        "key": "f"
+        "key": "F"
       },
       {
-        "key": "g"
+        "key": "G"
       },
       {
-        "key": "h"
+        "key": "H"
       },
       {
-        "key": "j"
+        "key": "J"
       },
       {
-        "key": "k"
+        "key": "K"
       },
       {
-        "key": "l"
+        "key": "L"
       },
       {
-        "key": "ç"
+        "key": "Ç"
       },
       {
-        "key": "z"
+        "key": "Z"
       },
       {
-        "key": "x"
+        "key": "X"
       },
       {
-        "key": "c"
+        "key": "C"
       },
       {
-        "key": "v"
+        "key": "V"
       },
       {
-        "key": "b"
+        "key": "B"
       },
       {
-        "key": "n"
+        "key": "N"
       },
       {
-        "key": "m"
+        "key": "M"
       }
     ]
   }
