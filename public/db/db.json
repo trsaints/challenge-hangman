@@ -1,0 +1,281 @@
+{
+  "game": {
+    "words": [
+      {
+        "name": "BATATA",
+        "category": "LEGUME"
+      },
+      {
+        "name": "MAÇÃ",
+        "category": "FRUTA"
+      },
+      {
+        "name": "BANANA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "MELÃO",
+        "category": "FRUTA"
+      },
+      {
+        "name": "MELANCIA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "JACA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "LARANJA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "UVA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "AMORA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "CEREJA",
+        "category": "FRUTA"
+      },
+      {
+        "name": "PÊSSEGO",
+        "category": "FRUTA"
+      },
+      {
+        "name": "CENOURA",
+        "category": "LEGUME"
+      },
+      {
+        "name": "BETERRABA",
+        "category": "LEGUME"
+      },
+      {
+        "name": "CARÁ",
+        "category": "LEGUME"
+      },
+      {
+        "name": "RABANETE",
+        "category": "LEGUME"
+      },
+      {
+        "name": "MANDIOCA",
+        "category": "LEGUME"
+      },
+      {
+        "name": "ABÓBORA",
+        "category": "LEGUME"
+      },
+      {
+        "name": "PEPINO",
+        "category": "LEGUME"
+      },
+      {
+        "name": "TOMATE",
+        "category": "FRUTA"
+      },
+      {
+        "name": "BRÓCOLIS",
+        "category": "LEGUME"
+      },
+      {
+        "name": "GAVIÃO",
+        "category": "AVE"
+      },
+      {
+        "name": "ARARA",
+        "category": "AVE"
+      },
+      {
+        "name": "CORUJA",
+        "category": "AVE"
+      },
+      {
+        "name": "HARPIA",
+        "category": "AVE"
+      },
+      {
+        "name": "CARCARÁ",
+        "category": "AVE"
+      },
+      {
+        "name": "URUBÚ",
+        "category": "AVE"
+      },
+      {
+        "name": "FALCÃO",
+        "category": "AVE"
+      },
+      {
+        "name": "GUEPARDO",
+        "category": "FELINO"
+      },
+      {
+        "name": "LEÃO",
+        "category": "FELINO"
+      },
+      {
+        "name": "LEOPARDO",
+        "category": "FELINO"
+      },
+      {
+        "name": "PANTERA",
+        "category": "FELINO"
+      },
+      {
+        "name": "ONÇA",
+        "category": "FELINO"
+      },
+      {
+        "name": "LINCE",
+        "category": "FELINO"
+      },
+      {
+        "name": "BRASIL",
+        "category": "PAÍS"
+      },
+      {
+        "name": "COSTA DO MARFIM",
+        "category": "PAÍS"
+      },
+      {
+        "name": "SENEGAL",
+        "category": "PAÍS"
+      },
+      {
+        "name": "CAMARÕES",
+        "category": "PAÍS"
+      },
+      {
+        "name": "CANADÁ",
+        "category": "PAÍS"
+      },
+      {
+        "name": "JAPÃO",
+        "category": "PAÍS"
+      },
+      {
+        "name": "CHINA",
+        "category": "PAÍS"
+      },
+      {
+        "name": "ESTADOS UNIDOS",
+        "category": "PAÍS"
+      },
+      {
+        "name": "MÉXICO",
+        "category": "PAÍS"
+      },
+      {
+        "name": "ARGENTINA",
+        "category": "PAÍS"
+      },
+      {
+        "name": "PORTUGAL",
+        "category": "PAÍS"
+      },
+      {
+        "name": "ESPANHA",
+        "category": "PAÍS"
+      },
+      {
+        "name": "RÚSSIA",
+        "category": "PAÍS"
+      },
+      {
+        "name": "ÍNDIA",
+        "category": "PAÍS"
+      },
+      {
+        "name": "ISRAEL",
+        "category": "PAÍS"
+      }
+    ],
+    "accteptableKeys": [
+      {
+        "key": "Q"
+      },
+      {
+        "key": "W"
+      },
+      {
+        "key": "E"
+      },
+      {
+        "key": "R"
+      },
+      {
+        "key": "T"
+      },
+      {
+        "key": "Y"
+      },
+      {
+        "key": "U"
+      },
+      {
+        "key": "I"
+      },
+      {
+        "key": "O"
+      },
+      {
+        "key": "P"
+      },
+      {
+        "key": "A"
+      },
+      {
+        "key": "S"
+      },
+      {
+        "key": "D"
+      },
+      {
+        "key": "F"
+      },
+      {
+        "key": "G"
+      },
+      {
+        "key": "H"
+      },
+      {
+        "key": "J"
+      },
+      {
+        "key": "K"
+      },
+      {
+        "key": "L"
+      },
+      {
+        "key": "Ç"
+      },
+      {
+        "key": "Z"
+      },
+      {
+        "key": "X"
+      },
+      {
+        "key": "C"
+      },
+      {
+        "key": "V"
+      },
+      {
+        "key": "B"
+      },
+      {
+        "key": "N"
+      },
+      {
+        "key": "M"
+      }
+    ]
+  }
+}
