@@ -10,12 +10,12 @@ export function setValidKeys(keyRange) {
   localStorage.setItem("filteredKeys", JSON.stringify(filteredKeyRange));
 }
 
-function getValidKeys() {
+export function getValidKeys() {
   return JSON.parse(localStorage.getItem("filteredKeys"));
 }
 
 export function observe(game) {
-  if (game.name.length === 0) {
+  if (game.missingLetters.length === 0) {
     game.win = true;
   }
 
@@ -26,34 +26,48 @@ export function observe(game) {
   if (game.win || game.lose) return game;
 }
 
-export async function startGame(callbacks, components, database) {
-  const word = await getRandomWord(database);
-  const game = new components.Game(word);
-  const keyRange = getValidKeys()
+function getKey(key, target) {
+  const keyRange = getValidKeys();
 
-  console.table(word);
-  console.log(keyRange)
+  let finalTarget = null;
+  const virtualKey = target.closest("[data-element='game-key']");
+
+  if (key) finalTarget = key.toUpperCase();
+  else if (virtualKey) finalTarget = virtualKey.value;
+
+  const validKeyRange = keyRange.includes(finalTarget);
+
+  if (validKeyRange) return finalTarget;
+}
+
+function executeAttempt(callbacks, keyPressed, game) {
+  callbacks.fillPanel(callbacks, keyPressed);
+
+  if (game.cleanName.includes(keyPressed)) {
+    game.removeLetter(keyPressed);
+    callbacks.fillLetters(callbacks, keyPressed, game);
+  } else {
+    game.decreaseAttempts();
+    callbacks.drawFail(callbacks, game.attempts);
+  }
+}
+
+export async function startGame(callbacks, components, database) {
+  const game = new components.Game(await getRandomWord(database));
 
   const play = ({ key, target }) => {
-    let finalTarget = null;
-    const virtualKey = target.closest("[data-element='key']");
+    const keyPressed = getKey(key, target);
 
-    if (key) finalTarget = key.toUpperCase();
-    else if (virtualKey) finalTarget = virtualKey.value;
+    if (!keyPressed) return;
 
-    const invalidKeyRange = !keyRange.includes(finalTarget);
-
-    if (invalidKeyRange) return;
-
-    if (word.name.includes(finalTarget)) game.removeLetter(finalTarget);
-    else game.decreaseAttempts();
+    executeAttempt(callbacks, keyPressed, game);
 
     const status = observe(game);
 
     if (status) {
-      callbacks.end({ callbacks, game, word });
       document.removeEventListener("keydown", play);
       document.removeEventListener("click", play);
+      setTimeout(() => callbacks.end({ callbacks, game }), 500);
     }
   };
 

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .game__panel {
@@ -19,39 +19,39 @@
   background-color: var(--c-gray-ds);
   max-width: 400px;
   font-size: 20px;
-  min-height: calc(8px + 2ch);
+  height: 2.5rem;
   min-width: 200px;
 }
 
 .game__word {
   text-align: center;
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .word__letter {
   display: inline-block;
   text-align: center;
-  width: 32px;
-  height: 32px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 8px;
   border-bottom: 2px solid var(--c-black);
-  margin-bottom: 8px;
+}
+
+.break {
+  display: block;
+  width: auto;
+  flex-basis: 100%;
+  height: 0;
 }
 
 .word__letter.active {
   border-bottom-color: var(--c-orange);
   background-color: var(--c-white);
   box-shadow: 2px 2px 8px var(--c-gray);
-  transform: scale(1.1);
 }
-
-.word__letter + .word__letter {
-  margin-left: 8px;
-}
-
-.word__letter--blank::after {
-  content: "\a";
-  white-space: pre;
-}
-
 
 .game__keyboard {
   text-align: center;

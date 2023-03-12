@@ -1,6 +1,9 @@
 export function getElement(element) {
   return document.querySelector(`[data-element="${element}"]`);
 }
+export function getElements(element) {
+  return document.querySelectorAll(`[data-element="${element}"]`);
+}
 
 export function showElement(element) {
   if (element.classList.contains("hidden")) {

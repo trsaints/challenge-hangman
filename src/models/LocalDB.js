@@ -32,8 +32,6 @@ export default class LocalDB {
         "error",
         (_e) => new Error("Failed to configure database")
       );
-
-      console.log(`Object Store: ${store}`);
     }
   }
 

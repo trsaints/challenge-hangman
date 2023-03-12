@@ -49,7 +49,10 @@ export default class GamePanel {
     const lineBreakDelimiter = /P|Ç/g;
 
     keys.forEach((key) => {
-      virtualKeyboard.appendChild(this.#generateKey(key));
+      const virtualKey = this.#generateKey(key);
+      virtualKey.setAttribute("type", "button");
+
+      virtualKeyboard.appendChild(virtualKey);
 
       if (lineBreakDelimiter.test(key))
         virtualKeyboard.appendChild(new DOMElement("br"));
@@ -62,19 +65,21 @@ export default class GamePanel {
     const virtualKey = new DOMElement("button", ["keyboard__key"]);
     virtualKey.textContent = key;
     virtualKey.setAttribute("value", key);
-    virtualKey.setAttribute("data-element", "key");
+    virtualKey.setAttribute("data-element", "game-key");
 
     return virtualKey;
   }
 
   #generateCanvas() {
     const canvas = new DOMElement("canvas", ["game__panel"]);
+    canvas.setAttribute("data-element", "game-canvas");
 
     return canvas;
   }
 
   #generateAttemptsPanel() {
     const panel = new DOMElement("output", ["game__attempts"]);
+    panel.setAttribute("data-element", "game-attempts");
 
     return panel;
   }
@@ -86,11 +91,13 @@ export default class GamePanel {
     letters.forEach((letter) => {
       const span = new DOMElement("span", ["word__letter"]);
 
-      if (letter === " ")
-        panel.appendChild(new DOMElement("span", ["word__letter--blank"]));
-      else {
-        panel.appendChild(span);
-      }
+      if (letter === " ") {
+        const blankSpan = new DOMElement("span", ["break"]);
+        blankSpan.setAttribute("aria-hidden", true);
+        panel.appendChild(blankSpan);
+      } else panel.appendChild(span);
+
+      span.setAttribute("data-element", "game-letter");
     });
 
     return panel;
