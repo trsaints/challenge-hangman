@@ -34,63 +34,63 @@
 
       <div class="main__game hidden" aria-hidden="true" data-element="game"></div>
 
-      <section class="main__editor hidden" aria-hidden="true">
+      <section class="main__editor hidden" aria-hidden="true" data-element="editor">
         <h2 class="editor__title">Editor de Palavras</h2>
 
         <menu class="editor__options">
-          <button class="options__button" type="button" data-element="add-word">
+          <button class="options__button" type="button" data-element="add">
             Nova Palavra
             <i class="fa-solid fa-plus" aria-hidden="true"></i>
           </button>
 
-          <button class="options__button" type="button" data-element="list-words">
+          <button class="options__button" type="button" data-element="list">
             Listar Palavras
             <i class="fa-solid fa-list" aria-hidden="true"></i>
           </button>
         </menu>
 
-        <form class="editor__form" action="./success.html">
+        <form class="editor__form hidden" aria-hidden="true" action="./success.html" data-element="editor-form">
           <fieldset class="form__fieldset">
             <legend class="fieldset__legend">Nova Palavra</legend>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-word">Palavra</label>
-              <input class="field__label" id="game-word" type="text" />
+              <input class="field__label" id="game-word" name="name" type="text" />
             </div>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-category">Categoria</label>
-              <input class="field__label" id="game-category" type="text" />
+              <input class="field__label" id="game-category" name="category" type="text" />
             </div>
           </fieldset>
 
-          <button class="form__submit" type="submit">
+          <button class="form__submit" name="submit" type="submit">
             Adicionar Palavra
             <i class="fa-solid fa-plus" aria-hidden="true"></i>
           </button>
         </form>
 
-        <section class="editor__listing">
+        <section class="editor__listing hidden" aria-hidden="true" data-element="editor-database">
           <h3 class="listing__title">Palavras do Jogo</h3>
 
-          <ul class="listing__list" data-editor="listing"></ul>
+          <ul class="listing__list" data-element="listing"></ul>
 
           <dialog
             class="listing__dialog hidden"
-            data-editor="modal"
+            data-element="editor-modal"
             aria-hidden="true"
           >
-            <h3 class="dialog__title">Excluir palavra</h3>
+            <h3 class="dialog__title" data-element="modal-action"></h3>
 
-            <p class="dialog__display"></p>
+            <p class="dialog__display" data-element="modal-desc"></p>
 
-            <menu class="dialog__options">
+            <menu class="dialog__options" data-element="modal-options">
               <button
                 class="options__button"
                 type="button"
-                data-element="delete"
+                data-element="confirm"
               >
-                Excluir
+                Sim
                 <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
               </button>
 

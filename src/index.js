@@ -1,7 +1,12 @@
+import EditorWord from "./components/EditorWord.js";
 import GamePanel from "./components/GamePanel.js";
 import initialize from "./controller/controller.js";
 import Game from "./models/Game.js";
-import { adjustCanvas, drawFail, drawGallow } from "./services/canvas_service.js";
+import {
+  adjustCanvas,
+  drawFail,
+  drawGallow
+} from "./services/canvas_service.js";
 import { configureDB, gameDB } from "./services/db_service.js";
 import {
   getRandomWord,
@@ -16,6 +21,7 @@ import {
   showElement
 } from "./views/dom_view.js";
 import { end, fillLetters, fillPanel, start } from "./views/game_view.js";
+
 
 const dependencies = {
   callbacks: {
@@ -38,6 +44,7 @@ const dependencies = {
   },
   components: {
     GamePanel,
+    EditorWord,
     Game,
   },
   database: gameDB,
