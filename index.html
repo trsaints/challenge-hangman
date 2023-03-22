@@ -20,12 +20,12 @@
         <h2 class="menu__title" data-element="menu-title">Eaí, o que deseja fazer?</h2>
 
         <menu class="menu__options">
-          <button class="options__button" type="button" data-element="start-game">
+          <button class="options__button" type="button" data-element="start">
             Iniciar Jogo
             <i class="fa-solid fa-play" aria-hidden="true"></i>
           </button>
 
-          <button class="options__button" type="button" data-element="edit-game">
+          <button class="options__button" type="button" data-element="edit">
             Configurar Jogo
             <i class="fa-solid fa-pen" aria-hidden="true"></i>
           </button>
@@ -49,18 +49,18 @@
           </button>
         </menu>
 
-        <form class="editor__form hidden" aria-hidden="true" action="./success.html" data-element="editor-form">
+        <form novalidate class="editor__form hidden" aria-hidden="true" action="./success.html" data-element="editor-form">
           <fieldset class="form__fieldset">
             <legend class="fieldset__legend">Nova Palavra</legend>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-word">Palavra</label>
-              <input class="field__label" id="game-word" name="name" type="text" />
+              <input class="field__label" id="game-word" name="name" type="text" required />
             </div>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-category">Categoria</label>
-              <input class="field__label" id="game-category" name="category" type="text" />
+              <input class="field__label" id="game-category" name="category" type="text" required />
             </div>
           </fieldset>
 

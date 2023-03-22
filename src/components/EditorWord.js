@@ -48,8 +48,8 @@ export default class EditorWord {
     deleteBtn.appendChild(deleteIcon);
 
     menu.setAttribute("id", id);
-    editBtn.setAttribute("data-element", "edit");
-    deleteBtn.setAttribute("data-element", "delete");
+    editBtn.setAttribute("data-element", "modify");
+    deleteBtn.setAttribute("data-element", "remove");
 
     menu.appendChild(editBtn);
     menu.appendChild(deleteBtn);
