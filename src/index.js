@@ -20,7 +20,7 @@ import {
   hideElement,
   showElement
 } from "./views/dom_view.js";
-import { addWord,showEditor, showForm, displayWords, displayConfirmation, confirmAction, cancelAction } from "./views/editor_view.js";
+import { addWord,showEditor, showForm, displayWords, displayConfirmation, confirmAction, cancelAction, validateForm } from "./views/editor_view.js";
 import { end, fillLetters, fillPanel, start } from "./views/game_view.js";
 
 
@@ -48,7 +48,8 @@ const dependencies = {
     drawFail,
     drawGallow,
     showEditor,
-    showForm
+    showForm,
+    validateForm
   },
   components: {
     GamePanel,

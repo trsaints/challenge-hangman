@@ -28,5 +28,9 @@ export default async function initialize({ callbacks, components, database }) {
     actions[element](target);
   });
 
-  form.addEventListener('submit', async () => await callbacks.addWord({ callbacks, database}))
+  form.addEventListener("submit", async (evt) => {
+    callbacks.validateForm({ evt, callbacks });
+
+    await callbacks.addWord({ callbacks, database });
+  });
 }

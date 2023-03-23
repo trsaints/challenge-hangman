@@ -70,12 +70,42 @@ export function cancelAction({ callbacks }) {
   callbacks.hideElement(modal);
 }
 
-export async function addWord({ callbacks, database }) {
+export function validateForm({ evt, callbacks }) {
+  const validations = ["valueMissing", "patternMismatch"];
+
+  const messages = {
+    valueMissing: "Este campo é obrigatório.",
+    patterMismatch:
+      "Este campo deve ter: \n Somente letras \n de 3 a 20 caracteres",
+  };
 
   const { elements } = callbacks.getElement("editor-form");
 
-  await database.addObject('words', {
-    name: elements['game-word'].value,
-    category: elements['category'].value
-  })
+  const wordInput = elements["game-word"],
+    categoryInput = elements["category"];
+
+  validations.forEach((validation) => {
+    if (wordInput.validity[validation] || categoryInput.validity[validation]) {
+      evt.preventDefault();
+    }
+
+    if (wordInput.validity[validation]) {
+      wordInput.reportValidity();
+      wordInput.setCustomValidity(messages[validation]);
+    }
+
+    if (categoryInput.validity[validation]) {
+      categoryInput.reportValidity();
+      categoryInput.setCustomValidity(messages[validation]);
+    }
+  });
+}
+
+export async function addWord({ callbacks, database }) {
+  const { elements } = callbacks.getElement("editor-form");
+
+  await database.addObject("words", {
+    name: elements["game-word"].value.toUpperCase(),
+    category: elements["category"].value.toUpperCase(),
+  });
 }
