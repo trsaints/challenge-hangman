@@ -47,7 +47,7 @@ export default class EditorWord {
     deleteBtn.appendChild(deleteSpan);
     deleteBtn.appendChild(deleteIcon);
 
-    menu.setAttribute("id", id);
+    menu.setAttribute("id", id.replaceAll(" ", "-"));
     editBtn.setAttribute("data-element", "modify");
     deleteBtn.setAttribute("data-element", "remove");
 

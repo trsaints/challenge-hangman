@@ -45,7 +45,7 @@ export async function displayConfirmation({ target, callbacks, database }) {
   const modalTitle = callbacks.getElement("modal-action");
   const modalDesc = callbacks.getElement("modal-desc");
 
-  const { name, category } = await database.load("words", id);
+  const { name, category } = await database.load("words", id.replaceAll("-", " "));
 
   modalTitle.textContent = "Excluir Palavra";
   modalDesc.textContent = `Deseja excluir ${name}? Categoria: ${category}`;
@@ -62,7 +62,7 @@ export async function confirmAction({ callbacks, database }) {
 
   const { parentNode } = document.querySelector(`#${id}`);
 
-  await database.removeObject("words", id);
+  await database.removeObject("words", id.replaceAll("-", " "));
 
   modal.close();
   callbacks.hideElement(modal);
