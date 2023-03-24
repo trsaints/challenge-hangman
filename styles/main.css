@@ -96,3 +96,7 @@ body {
 .footer .desc__link {
   color: var(--c-orange);
 }
+
+i {
+  pointer-events: none;
+}
