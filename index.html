@@ -13,11 +13,13 @@
     <title>Jogo da Forca</title>
   </head>
   <body data-context="default">
-    <main class="main" >
+    <main class="main">
       <h1 class="main__title">Jogo da Forca</h1>
 
       <section class="main__menu" data-element="menu">
-        <h2 class="menu__title" data-element="menu-title">Eaí, o que deseja fazer?</h2>
+        <h2 class="menu__title" data-element="menu-title">
+          Eaí, o que deseja fazer?
+        </h2>
 
         <menu class="menu__options">
           <button class="options__button" type="button" data-element="start">
@@ -32,9 +34,17 @@
         </menu>
       </section>
 
-      <div class="main__game hidden" aria-hidden="true" data-element="game"></div>
+      <div
+        class="main__game hidden"
+        aria-hidden="true"
+        data-element="game"
+      ></div>
 
-      <section class="main__editor hidden" aria-hidden="true" data-element="editor">
+      <section
+        class="main__editor hidden"
+        aria-hidden="true"
+        data-element="editor"
+      >
         <h2 class="editor__title">Editor de Palavras</h2>
 
         <menu class="editor__options">
@@ -49,18 +59,43 @@
           </button>
         </menu>
 
-        <form novalidate class="editor__form hidden" aria-hidden="true" data-element="editor-form">
+        <form
+          novalidate
+          class="editor__form hidden"
+          aria-hidden="true"
+          data-element="editor-form"
+        >
           <fieldset class="form__fieldset">
             <legend class="fieldset__legend">Nova Palavra</legend>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-word">Palavra</label>
-              <input class="field__label" id="game-word" name="name" type="text" required pattern="[a-zA-Z]{3,20}" data-element="word-name" />
+              <input
+                class="field__label"
+                id="game-word"
+                name="name"
+                type="text"
+                required
+                pattern="^[\p{L}çÇ]+(?:\s(?! )\s*[\p{L}çÇ]+)*$"
+                minlength="3"
+                maxlength="24"
+                data-element="word-name"
+              />
             </div>
 
             <div class="fieldset__field">
               <label class="field__input" for="game-category">Categoria</label>
-              <input class="field__label" id="game-category" name="category" type="text" required pattern="[a-zA-Z]{3,20}" data-element="word-category" />
+              <input
+                class="field__label"
+                id="game-category"
+                name="category"
+                type="text"
+                required
+                pattern="^[\p{L}çÇ]+(?:\s(?! )\s*[\p{L}çÇ]+)*$"
+                minlength="3"
+                maxlength="24"
+                data-element="word-category"
+              />
             </div>
           </fieldset>
 
@@ -70,7 +105,11 @@
           </button>
         </form>
 
-        <section class="editor__listing hidden" aria-hidden="true" data-element="editor-database">
+        <section
+          class="editor__listing hidden"
+          aria-hidden="true"
+          data-element="editor-database"
+        >
           <h3 class="listing__title">Palavras do Jogo</h3>
 
           <ul class="listing__list" data-element="listing"></ul>
