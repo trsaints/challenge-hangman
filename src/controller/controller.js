@@ -26,4 +26,10 @@ export default async function initialize({ callbacks, components, database }) {
 
     actions[element](target);
   });
+
+  callbacks
+    .getElement("editor-modal")
+    .addEventListener("keydown", ({ key }) => {
+      if (key === "Escape") actions.cancel();
+    });
 }
