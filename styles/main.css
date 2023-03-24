@@ -69,6 +69,11 @@ body {
   text-align: center;
 }
 
+.main__editor:not(.hidden) {
+  display: grid;
+  gap: 1rem;
+}
+
 [class*="__options"] {
   display: grid;
   place-items: flex-start center;
@@ -99,4 +104,8 @@ body {
 
 i {
   pointer-events: none;
+}
+
+dialog::backdrop {
+  
 }

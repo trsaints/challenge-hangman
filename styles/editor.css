@@ -1,7 +1,46 @@
+.editor__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.editor__form,
+.form__fieldset {
+  display: grid;
+  gap: 1rem;
+}
+
+.fieldset__field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__submit {
+  padding: 4px 8px;
+  background-color: var(--c-orange);
+  border: none;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
+
 .listing__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+.listing__dialog {
+  display: grid;
+  gap: 1rem;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-white),
+    var(--c-white-d)
+  );
 }
 
 .list__word {
@@ -12,4 +51,11 @@
   background-color: var(--c-white);
   border-radius: 4px;
   box-shadow: 0 0 8px var(--c-gray-ds);
+}
+
+.dialog__title, .listing__title, .fieldset__legend {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
