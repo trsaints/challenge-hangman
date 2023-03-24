@@ -1,8 +1,9 @@
-const validations = ["valueMissing", "patternMismatch"],
+const validations = ["valueMissing", "patternMismatch", "tooLong", "tooShort"],
   messages = {
     valueMissing: "Este campo é obrigatório.",
-    patternMismatch:
-      "Este campo deve ter: \n Somente letras \n de 3 a 20 caracteres",
+    patternMismatch: "Este campo deve ter: \n Somente letras",
+    tooLong: "Insira no máximo 24 caracteres",
+    tooShort: "Insira, no mínimo, 3 caracteres",
   };
 
 export function showEditor({ callbacks }) {
@@ -23,7 +24,7 @@ export function showForm({ callbacks }) {
 
 export async function displayWords({ callbacks, components, database }) {
   const frag = document.createDocumentFragment();
-  
+
   const form = callbacks.getElement("editor-form"),
     editorDB = callbacks.getElement("editor-database"),
     wordListing = callbacks.getElement("listing");
@@ -58,7 +59,7 @@ export async function displayConfirmation({ target, callbacks, database }) {
   modal.setAttribute("data-word", id);
 
   callbacks.showElement(modal);
-  modal.show();
+  modal.showModal();
 }
 
 export async function confirmAction({ callbacks, database }) {
