@@ -20,13 +20,14 @@ import {
   hideElement,
   showElement
 } from "./views/dom_view.js";
-import { addWord,showEditor, showForm, displayWords, displayConfirmation, confirmAction, cancelAction, validateForm } from "./views/editor_view.js";
+import {
+  cancelAction, confirmAction, displayConfirmation, displayWords, setValidation, showEditor,
+  showForm
+} from "./views/editor_view.js";
 import { end, fillLetters, fillPanel, start } from "./views/game_view.js";
-
 
 const dependencies = {
   callbacks: {
-    addWord,
     adjustCanvas,
     displayWords,
     displayConfirmation,
@@ -49,7 +50,7 @@ const dependencies = {
     drawGallow,
     showEditor,
     showForm,
-    validateForm
+    setValidation,
   },
   components: {
     GamePanel,

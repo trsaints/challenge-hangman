@@ -1,3 +1,10 @@
+const validations = ["valueMissing", "patternMismatch"],
+  messages = {
+    valueMissing: "Este campo é obrigatório.",
+    patternMismatch:
+      "Este campo deve ter: \n Somente letras \n de 3 a 20 caracteres",
+  };
+
 export function showEditor({ callbacks }) {
   const editor = callbacks.getElement("editor");
   const mainMenu = callbacks.getElement("menu");
@@ -70,38 +77,47 @@ export function cancelAction({ callbacks }) {
   callbacks.hideElement(modal);
 }
 
-export function validateForm({ evt, callbacks }) {
-  const validations = ["valueMissing", "patternMismatch"];
+function checkValidity(input) {
+  return input.validity.valid;
+}
 
-  const messages = {
-    valueMissing: "Este campo é obrigatório.",
-    patterMismatch:
-      "Este campo deve ter: \n Somente letras \n de 3 a 20 caracteres",
-  };
-
-  const { elements } = callbacks.getElement("editor-form");
-
-  const wordInput = elements["game-word"],
-    categoryInput = elements["category"];
-
+function validate(input) {
   validations.forEach((validation) => {
-    if (wordInput.validity[validation] || categoryInput.validity[validation]) {
-      evt.preventDefault();
-    }
-
-    if (wordInput.validity[validation]) {
-      wordInput.reportValidity();
-      wordInput.setCustomValidity(messages[validation]);
-    }
-
-    if (categoryInput.validity[validation]) {
-      categoryInput.reportValidity();
-      categoryInput.setCustomValidity(messages[validation]);
-    }
+    if (input.validity[validation]) {
+      input.reportValidity();
+      input.setCustomValidity(messages[validation]);
+    } else input.setCustomValidity("");
   });
 }
 
-export async function addWord({ callbacks, database }) {
+export function setValidation({ callbacks, database }) {
+  const form = callbacks.getElement("editor-form"),
+    { elements } = form,
+    wordInput = elements["game-word"],
+    categoryInput = elements["category"];
+
+  form.addEventListener("submit", async (evt) => {
+    evt.preventDefault();
+
+    const notValid = !(
+      checkValidity(wordInput) && checkValidity(categoryInput)
+    );
+
+    if (notValid) return;
+
+    await addWord({ callbacks, database });
+
+    form.reset();
+  });
+
+  wordInput.addEventListener("input", () => validate(wordInput));
+  wordInput.addEventListener("focusout", () => validate(wordInput));
+
+  categoryInput.addEventListener("input", () => validate(categoryInput));
+  categoryInput.addEventListener("focusout", () => validate(categoryInput));
+}
+
+async function addWord({ callbacks, database }) {
   const { elements } = callbacks.getElement("editor-form");
 
   await database.addObject("words", {

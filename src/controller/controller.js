@@ -16,9 +16,8 @@ export default async function initialize({ callbacks, components, database }) {
 
   const keyRange = await database.loadAll("accteptableKeys");
 
-  const form = callbacks.getElement("editor-form");
-
   callbacks.setValidKeys(keyRange);
+  callbacks.setValidation({ callbacks, database });
 
   document.addEventListener("click", ({ target }) => {
     const { element } = target.dataset;
@@ -26,11 +25,5 @@ export default async function initialize({ callbacks, components, database }) {
     if (!actions[element]) return;
 
     actions[element](target);
-  });
-
-  form.addEventListener("submit", async (evt) => {
-    callbacks.validateForm({ evt, callbacks });
-
-    await callbacks.addWord({ callbacks, database });
   });
 }
