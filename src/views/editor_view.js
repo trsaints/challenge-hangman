@@ -23,8 +23,10 @@ export function showForm({ callbacks }) {
 
 export async function displayWords({ callbacks, components, database }) {
   const frag = document.createDocumentFragment();
-  const form = callbacks.getElement("editor-form");
-  const editorDB = callbacks.getElement("editor-database");
+  
+  const form = callbacks.getElement("editor-form"),
+    editorDB = callbacks.getElement("editor-database"),
+    wordListing = callbacks.getElement("listing");
 
   await database
     .loadAll("words")
@@ -32,7 +34,7 @@ export async function displayWords({ callbacks, components, database }) {
       words.forEach((word) => frag.appendChild(new components.EditorWord(word)))
     );
 
-  editorDB.appendChild(frag);
+  wordListing.appendChild(frag);
 
   callbacks.hideElement(form);
   callbacks.showElement(editorDB);
@@ -45,7 +47,10 @@ export async function displayConfirmation({ target, callbacks, database }) {
   const modalTitle = callbacks.getElement("modal-action");
   const modalDesc = callbacks.getElement("modal-desc");
 
-  const { name, category } = await database.load("words", id.replaceAll("-", " "));
+  const { name, category } = await database.load(
+    "words",
+    id.replaceAll("-", " ")
+  );
 
   modalTitle.textContent = "Excluir Palavra";
   modalDesc.textContent = `Deseja excluir ${name}? Categoria: ${category}`;
