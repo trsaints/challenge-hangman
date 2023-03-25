@@ -72,6 +72,7 @@ export async function confirmAction({ callbacks, database }) {
 
   modal.close();
   callbacks.hideElement(modal);
+  callbacks.showPopup("Item excluído com sucesso!");
 
   parentNode.remove();
 }
@@ -112,6 +113,8 @@ export function setValidation({ callbacks, database }) {
     if (notValid) return;
 
     await addWord({ callbacks, database });
+
+    callbacks.showPopup("Item adicionado com sucesso!");
 
     form.reset();
   });

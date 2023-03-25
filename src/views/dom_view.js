@@ -22,5 +22,19 @@ export function hideElement(element) {
 }
 
 export function clearContent(element) {
-  while (element.firstChild) element.removeChild(element.firstChild)
+  while (element.firstChild) element.removeChild(element.firstChild);
+}
+
+export function showPopup(message) {
+  const popup = getElement("popup");
+  const warnMessage = getElement("warn-message");
+  
+  const reset = () => hideElement(popup)
+  clearTimeout(reset);
+
+  warnMessage.textContent = message;
+
+  showElement(popup);
+
+  setTimeout(reset, 3000);
 }

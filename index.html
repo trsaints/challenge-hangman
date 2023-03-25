@@ -69,9 +69,13 @@
             <legend class="fieldset__legend">Nova Palavra</legend>
 
             <div class="fieldset__field">
-              <label class="field__input" for="game-word">Palavra</label>
+              <label class="field__label" for="game-word"
+                >Palavra
+                <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+              </label>
+
               <input
-                class="field__label"
+                class="field__input"
                 id="game-word"
                 name="name"
                 type="text"
@@ -84,9 +88,12 @@
             </div>
 
             <div class="fieldset__field">
-              <label class="field__input" for="game-category">Categoria</label>
+              <label class="field__label" for="game-category"
+                >Categoria <i class="fa-solid fa-tag" aria-hidden="true"></i
+              ></label>
+
               <input
-                class="field__label"
+                class="field__input"
                 id="game-category"
                 name="category"
                 type="text"
@@ -145,6 +152,10 @@
           </dialog>
         </section>
       </section>
+
+      <aside class="main__popup hidden" data-element="popup" aria-hidden="true">
+        <p data-element="warn-message"></p>
+      </aside>
     </main>
 
     <footer class="footer">

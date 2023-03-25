@@ -18,7 +18,8 @@ import {
   getElement,
   getElements,
   hideElement,
-  showElement
+  showElement,
+  showPopup
 } from "./views/dom_view.js";
 import {
   cancelAction, confirmAction, displayConfirmation, displayWords, setValidation, showEditor,
@@ -51,6 +52,7 @@ const dependencies = {
     showEditor,
     showForm,
     setValidation,
+    showPopup
   },
   components: {
     GamePanel,
