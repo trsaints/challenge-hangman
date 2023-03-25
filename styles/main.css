@@ -29,7 +29,6 @@
 
 body {
   display: grid;
-  grid-template-rows: 5fr 1fr;
   font-family: "Tilt Neon";
   background-color: var(--c-white-d);
   font-size: 1.125rem;
@@ -42,13 +41,19 @@ body {
 }
 
 .footer {
-  padding: 32px 16px;
+  max-height: 156px;
+  align-self: flex-end;
+  background-color: var(--c-black);
+  color: var(--c-white-d);
+  font-size: 20px;
+  text-align: center;
+  padding: 48px 24px;
 }
 
 .main {
   display: grid;
   place-items: center;
-  padding-block: 32px;
+  padding-block: 48px;
 }
 
 .main__menu {
@@ -58,7 +63,7 @@ body {
 .main__title {
   font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   color: var(--c-orange);
   text-shadow: 4px 2px black;
 }
@@ -71,10 +76,22 @@ body {
 
 .main__editor:not(.hidden) {
   display: grid;
-  gap: 1rem;
+  gap: 4rem;
 }
 
-[class*="__options"] {
+.main__popup {
+  position: fixed;
+  z-index: 100;
+  border: 2px solid var(--c-gray-ds);
+  background-image: linear-gradient(to bottom, var(--c-white), var(--c-white-d));
+  border-radius: 4px;
+  padding: 8px 16px;
+  width: calc(100vw - 48px);
+  text-align: center;
+  top: 16px;
+}
+
+:where([class*="__options"]) {
   display: grid;
   place-items: flex-start center;
   grid-template-columns: 1fr;
@@ -91,21 +108,10 @@ body {
   width: 12.5rem;
 }
 
-.footer {
-  background-color: var(--c-black);
-  color: var(--c-white-d);
-  font-size: 20px;
-  text-align: center;
-}
-
 .footer .desc__link {
   color: var(--c-orange);
 }
 
 i {
   pointer-events: none;
-}
-
-dialog::backdrop {
-  
 }

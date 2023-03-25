@@ -14,6 +14,26 @@
 .fieldset__field {
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  border-bottom: 4px solid var(--c-orange);
+  font-size: 1.125rem;
+  width: calc(100vw - 48px);
+  border-bottom-left-radius: 4px;
+}
+
+.field__label {
+  padding: 4px 8px;
+  background-color: var(--c-orange);
+  color: var(--c-black);
+  border-top-left-radius: 4px;
+  min-width: fit-content;
+}
+
+.field__input {
+  padding: 4px 8px;
+  border: none;
+  background-color: transparent;
+  width: 100%;
 }
 
 .form__submit {
@@ -26,7 +46,7 @@
 
 .listing__list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -44,16 +64,33 @@
 }
 
 .list__word {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 4px 8px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4fr 1fr;
+  gap: 1rem;
+  padding: 8px 16px;
   background-color: var(--c-white);
   border-radius: 4px;
   box-shadow: 0 0 8px var(--c-gray-ds);
+  width: calc(100vw - 48px);
 }
 
-.dialog__title, .listing__title, .fieldset__legend {
+.word__options {
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+}
+
+.option__edit,.option__delete {
+  padding: 8px 16px;
+  border: none;
+  background-color: var(--c-black-ls);
+  color: var(--c-white);
+  border-radius: 4px;
+}
+
+.dialog__title,
+.listing__title,
+.fieldset__legend {
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;

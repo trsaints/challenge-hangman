@@ -14,23 +14,23 @@ export default class EditorWord {
   }
 
   #generateInfo(name, category) {
-    const frag = document.createDocumentFragment();
-    const h4 = new DOMElement("h4", ["word__name"]);
-    const p = new DOMElement("p", ["word__category"]);
+    const article = new DOMElement("article", ["word__info"]);
+    const h4 = new DOMElement("h4", ["info__name"]);
+    const p = new DOMElement("p", ["info__category"]);
 
     h4.textContent = `Palavra: ${name}`;
     p.textContent = `Categoria: ${category}`;
 
-    frag.appendChild(h4);
-    frag.appendChild(p);
+    article.appendChild(h4);
+    article.appendChild(p);
 
-    return frag;
+    return article;
   }
 
   #generateOptions(id) {
-    const menu = new DOMElement("menu");
-    const editBtn = new DOMElement("button");
-    const deleteBtn = new DOMElement("button");
+    const menu = new DOMElement("menu", ["word__options"]);
+    const editBtn = new DOMElement("button", ["option__edit"]);
+    const deleteBtn = new DOMElement("button", ["option__delete"]);
 
     const editSpan = new DOMElement("span", ["sr-only"]);
     editSpan.textContent = "Editar Palavra";
