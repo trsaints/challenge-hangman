@@ -1,0 +1,128 @@
+.editor__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.editor__options {
+  margin-inline: auto;
+}
+
+.editor__form,
+.form__fieldset {
+  display: grid;
+  gap: 1rem;
+}
+
+.fieldset__field {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 4px solid var(--c-orange);
+  font-size: 1.125rem;
+  width: calc(100vw - 48px);
+  border-bottom-left-radius: 4px;
+}
+
+.field__label {
+  background-color: var(--c-orange);
+  color: var(--c-black);
+  border-top-left-radius: 4px;
+  min-width: fit-content;
+}
+
+.field__input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.form__submit {
+  background-color: var(--c-orange);
+  border: none;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
+
+.listing__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.listing__dialog {
+  display: grid;
+  gap: 1rem;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-white),
+    var(--c-white-d)
+  );
+}
+
+.list__word {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4fr 1fr;
+  gap: 1rem;
+  padding: 8px 16px;
+  background-color: var(--c-white);
+  border-radius: 4px;
+  box-shadow: 0 0 8px var(--c-gray-ds);
+  width: calc(100vw - 48px);
+}
+
+.word__options {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  justify-self: flex-end;
+}
+
+.options__edit,
+.options__delete {
+  border: none;
+  background-color: var(--c-black-ls);
+  color: var(--c-white);
+  border-radius: 4px;
+  width: 3rem;
+}
+
+.dialog__title,
+.listing__title,
+.fieldset__legend {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.field__label,
+.field__input,
+.form__submit {
+  padding: 8px 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .list__word,
+  .fieldset__field {
+    width: calc(100vw - 72px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .listing__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .list__word {
+    width: calc(50vw - 72px);
+  }
+
+  .fieldset__field {
+    width: 50vw;
+  }
+}

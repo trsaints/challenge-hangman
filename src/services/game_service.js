@@ -15,13 +15,9 @@ export function getValidKeys() {
 }
 
 export function observe(game) {
-  if (game.missingLetters.length === 0) {
-    game.win = true;
-  }
+  if (game.missingLetters.length === 0) game.win = true;
 
-  if (game.attempts === 0) {
-    game.lose = true;
-  }
+  if (game.attempts === 0) game.lose = true;
 
   if (game.win || game.lose) return game;
 }

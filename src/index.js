@@ -1,7 +1,12 @@
+import EditorWord from "./components/EditorWord.js";
 import GamePanel from "./components/GamePanel.js";
 import initialize from "./controller/controller.js";
 import Game from "./models/Game.js";
-import { adjustCanvas, drawFail, drawGallow } from "./services/canvas_service.js";
+import {
+  adjustCanvas,
+  drawFail,
+  drawGallow
+} from "./services/canvas_service.js";
 import { configureDB, gameDB } from "./services/db_service.js";
 import {
   getRandomWord,
@@ -13,13 +18,22 @@ import {
   getElement,
   getElements,
   hideElement,
-  showElement
+  showElement,
+  showPopup
 } from "./views/dom_view.js";
+import {
+  cancelAction, confirmAction, displayConfirmation, displayWords, setValidation, showEditor,
+  showForm
+} from "./views/editor_view.js";
 import { end, fillLetters, fillPanel, start } from "./views/game_view.js";
 
 const dependencies = {
   callbacks: {
     adjustCanvas,
+    displayWords,
+    displayConfirmation,
+    confirmAction,
+    cancelAction,
     getElement,
     getElements,
     hideElement,
@@ -35,9 +49,14 @@ const dependencies = {
     end,
     drawFail,
     drawGallow,
+    showEditor,
+    showForm,
+    setValidation,
+    showPopup
   },
   components: {
     GamePanel,
+    EditorWord,
     Game,
   },
   database: gameDB,
