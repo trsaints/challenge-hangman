@@ -35,6 +35,7 @@ export async function displayWords({ callbacks, components, database }) {
       words.forEach((word) => frag.appendChild(new components.EditorWord(word)))
     );
 
+  callbacks.clearContent(wordListing);
   wordListing.appendChild(frag);
 
   callbacks.hideElement(form);
