@@ -2,10 +2,12 @@
   display: grid;
   place-items: center;
   gap: 1.5rem;
+  grid-template-areas: "tip" "game" "attempts" "letters" "keyboard";
 }
 
 .game__tip {
   font-size: 20px;
+  grid-area: tip;
 }
 
 .game__panel {
@@ -14,6 +16,7 @@
   border-radius: 4px;
   background-color: var(--c-white);
   box-shadow: 0 0 8px var(--c-gray-ds);
+  grid-area: game;
 }
 
 .game__attempts {
@@ -23,6 +26,7 @@
   font-size: 20px;
   height: 2.5rem;
   min-width: 200px;
+  grid-area: attempts;
 }
 
 .game__word {
@@ -32,6 +36,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: calc(100vw - 48px);
+  grid-area: letters;
 }
 
 .word__letter {
@@ -59,6 +64,7 @@
 .game__keyboard {
   text-align: center;
   max-width: calc(100vw - 48px);
+  grid-area: keyboard;
 }
 
 .keyboard__key {
@@ -100,5 +106,19 @@
 
   .game__keyboard {
     max-width: calc(100vw - 72px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main__game {
+    grid-template-areas:
+      "tip tip"
+      "game keyboard"
+      "attempts keyboard"
+      "letters  keyboard";
+  }
+
+  .game__word {
+    max-width: 25.5rem;
   }
 }
