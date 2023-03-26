@@ -29,8 +29,8 @@ export default class EditorWord {
 
   #generateOptions(id) {
     const menu = new DOMElement("menu", ["word__options"]);
-    const editBtn = new DOMElement("button", ["option__edit"]);
-    const deleteBtn = new DOMElement("button", ["option__delete"]);
+    const editBtn = new DOMElement("button", ["options__edit"]);
+    const deleteBtn = new DOMElement("button", ["options__delete"]);
 
     const editSpan = new DOMElement("span", ["sr-only"]);
     editSpan.textContent = "Editar Palavra";

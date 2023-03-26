@@ -41,7 +41,6 @@ body {
 }
 
 .footer {
-  max-height: 156px;
   align-self: flex-end;
   background-color: var(--c-black);
   color: var(--c-white-d);
@@ -83,7 +82,11 @@ body {
   position: fixed;
   z-index: 100;
   border: 2px solid var(--c-gray-ds);
-  background-image: linear-gradient(to bottom, var(--c-white), var(--c-white-d));
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-white),
+    var(--c-white-d)
+  );
   border-radius: 4px;
   padding: 8px 16px;
   width: calc(100vw - 48px);
@@ -98,14 +101,13 @@ body {
   gap: 1rem;
 }
 
-.options__button {
-  background-color: var(--c-orange);
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 1.125rem;
-  flex: 1;
+:where([class*="options__"]) {
   width: 12.5rem;
+  font-size: 1.125rem;
+  border: none;
+  background-color: var(--c-orange);
+  border-radius: 4px;
+  padding: 8px 16px;
 }
 
 .footer .desc__link {
@@ -114,4 +116,25 @@ body {
 
 i {
   pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    padding-block: 64px;
+  }
+
+  .main__title {
+    font-size: 3.5rem;
+  }
+
+  :where([class*="__options"]) {
+    margin-inline: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: max-content;
+  }
+
+  .main__popup {
+    width: calc(100vw - 72px);
+  }
 }
