@@ -15,4 +15,5 @@ Conceitos trabalhados
   - Caso contrário, a contagem de erros aumenta e uma parte do boneco é desenhada;
 * Manipulação da DOM
   - Ao iniciar, perder ou ganhar o jogo, novos elementos de UI são adicionados ou removidos do DOM
-![gallow-game](https://user-images.githubusercontent.com/90068572/178883195-49d20ba7-db3d-4ff7-b280-3b58a3b4dea7.png)
+
+![hangman_online_thumbnail](https://user-images.githubusercontent.com/90068572/227795495-b4997af9-3301-4d60-986f-5fdf34eef828.png)
