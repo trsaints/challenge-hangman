@@ -79,6 +79,16 @@
   margin-block: 4px;
 }
 
+.keyboard__key:hover,
+.keyboard__key:focus {
+  transform: scale(1.05);
+  background-image: linear-gradient(to bottom, var(--c-black-ls), var(--c-smoke));
+}
+
+.keyboard__key:active {
+  transform: scale(1);
+}
+
 .keyboard__key + .keyboard__key {
   margin-left: 4px;
 }

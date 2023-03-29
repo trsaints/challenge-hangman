@@ -25,17 +25,48 @@
   border-bottom-left-radius: 4px;
 }
 
+.fieldset__field:hover .field__label,
+.fieldset__field:focus-within .field__label {
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-orange),
+    var(--c-orange-ds)
+  );
+}
+
+.field__label:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-orange),
+    var(--c-orange-ds)
+  );
+}
+
+.fieldset__field:focus-within,
+.fieldset__field:hover {
+  border-bottom-color: var(--c-orange-ds);
+}
+
+.fieldset__field:hover {
+  transform: translateX(1%);
+}
+
 .field__label {
   background-color: var(--c-orange);
   color: var(--c-black);
   border-top-left-radius: 4px;
   min-width: fit-content;
+  cursor: pointer;
 }
 
 .field__input {
   border: none;
-  background-color: transparent;
+  background-color: var(--c-gray);
   width: 100%;
+}
+
+.field__input:focus {
+  background-color: transparent;
 }
 
 .form__submit {
@@ -70,10 +101,19 @@
   grid-template-columns: 4fr 1fr;
   gap: 1rem;
   padding: 8px 16px;
-  background-color: var(--c-white);
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-white),
+    var(--c-white-d),
+    var(--c-white)
+  );
   border-radius: 4px;
   box-shadow: 0 0 8px var(--c-gray-ds);
   width: calc(100vw - 48px);
+}
+
+.list__word:hover {
+  box-shadow: none;
 }
 
 .word__options {
@@ -89,6 +129,14 @@
   color: var(--c-white);
   border-radius: 4px;
   width: 3rem;
+}
+
+.options__edit:focus,
+.options__edit:hover,
+.options__delete:hover,
+.options__delete:focus {
+  background-image: linear-gradient(to bottom, var(--c-gray), var(--c-gray-ds));
+  color: var(--c-black);
 }
 
 .dialog__title,
