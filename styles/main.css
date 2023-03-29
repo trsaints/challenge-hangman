@@ -15,6 +15,7 @@
   --c-black: hsl(247, 15%, 5%);
   --c-black-l: hsl(248, 15%, 10%);
   --c-black-ls: hsl(248, 15%, 15%);
+  --c-smoke: hsl(248, 10%, 35%);
   --c-gray-ds: hsl(247, 10%, 60%);
   --c-gray-d: hsl(247, 10%, 70%);
   --c-gray: hsl(247, 10%, 80%);
@@ -22,9 +23,17 @@
   --c-white: hsl(0, 0%, 95%);
 }
 
-* {
+*,
+*::before,
+*::after {
   color: inherit;
   font-family: inherit;
+}
+
+input:focus,
+button:focus,
+a:focus {
+  outline: none;
 }
 
 body {
@@ -110,12 +119,65 @@ body {
   padding: 8px 16px;
 }
 
-.footer .desc__link {
+:where([class*="options__"]:hover),
+:where([class*="options__"]:focus),
+.form__submit:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-orange),
+    var(--c-orange-ds)
+  );
+}
+
+:where([class*="options__"]:active),
+.form__submit:active {
+  transform: scale(1);
+}
+
+.desc__link {
   color: var(--c-orange);
+  padding: 2px 4px;
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
 }
 
 i {
   pointer-events: none;
+}
+
+a {
+  display: inline-block;
+}
+
+.desc__link:hover {
+  text-decoration: none;
+}
+
+.desc__link:focus {
+  color: var(--c-black);
+}
+
+.desc__link::before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.desc__link:focus::before {
+  background-color: var(--c-orange);
+  box-shadow: 4px 4px 0 var(--c-black-ls);
+}
+
+button {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
